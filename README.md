@@ -1,0 +1,2 @@
+# Origami
+PaperMC プラグインのかんたんにするやつ
