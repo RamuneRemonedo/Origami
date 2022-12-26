@@ -37,7 +37,7 @@ public class ManagerService extends Service {
         commandService = null;
     }
 
-    public Service loadService(@Nonnull Service service) {
+    public <T extends Service> T loadService(@Nonnull T service) {
         if (isRegisteredService(service)) return service;
 
         service.onLoad();
