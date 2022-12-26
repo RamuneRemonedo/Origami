@@ -1,18 +1,16 @@
-package tokyo.ramune.origami.service;
+package tokyo.ramune.origami.system.service;
 
-import org.bukkit.command.defaults.BukkitCommand;
 import org.bukkit.event.Event;
 import org.bukkit.permissions.Permission;
 import org.bukkit.plugin.java.JavaPlugin;
-import tokyo.ramune.origami.system.Command;
-import tokyo.ramune.origami.system.Listener;
+import tokyo.ramune.origami.system.command.Command;
+import tokyo.ramune.origami.system.listener.Listener;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import java.util.Set;
 import java.util.logging.Logger;
 
-@ServiceHandler(priority = ServicePriority.NORMAL)
 public class Service {
     private final JavaPlugin plugin;
     private final Logger logger;
@@ -39,15 +37,6 @@ public class Service {
     }
 
     public void onUnload() {
-    }
-
-    public void onReload() {
-    }
-
-    public void onStart() {
-    }
-
-    public void onStop() {
     }
 
     @Nullable

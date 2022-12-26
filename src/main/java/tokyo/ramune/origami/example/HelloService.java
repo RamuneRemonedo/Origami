@@ -7,9 +7,9 @@ import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.permissions.Permission;
 import org.bukkit.permissions.PermissionDefault;
 import org.jetbrains.annotations.Nullable;
-import tokyo.ramune.origami.service.Service;
-import tokyo.ramune.origami.system.Command;
-import tokyo.ramune.origami.system.Listener;
+import tokyo.ramune.origami.system.command.Command;
+import tokyo.ramune.origami.system.listener.Listener;
+import tokyo.ramune.origami.system.service.Service;
 
 import java.util.Set;
 
@@ -19,12 +19,12 @@ public class HelloService extends Service {
     }
 
     @Override
-    public void onStart() {
+    public void onLoad() {
         getLogger().info("Hello World. This is HelloService!");
     }
 
     @Override
-    public void onStop() {
+    public void onUnload() {
         getLogger().info("Good Bye~~ (+ +)/");
     }
 

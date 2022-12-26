@@ -1,9 +1,8 @@
-package tokyo.ramune.origami.system;
+package tokyo.ramune.origami.system.command;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.function.Function;
 
 public class Command {

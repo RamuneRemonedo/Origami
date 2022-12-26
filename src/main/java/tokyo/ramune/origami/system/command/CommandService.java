@@ -1,16 +1,17 @@
-package tokyo.ramune.origami.system;
+package tokyo.ramune.origami.system.command;
 
 import org.bukkit.Bukkit;
 import org.bukkit.command.CommandSender;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.jetbrains.annotations.NotNull;
-import tokyo.ramune.origami.service.Service;
+import tokyo.ramune.origami.system.service.Service;
 
 import javax.annotation.Nonnull;
 import java.util.*;
 
 public class CommandService extends Service {
     private Set<String> registerCommands;
+
     public CommandService(@Nonnull JavaPlugin plugin) {
         super(plugin);
     }
@@ -55,7 +56,7 @@ public class CommandService extends Service {
     }
 
     @Override
-    public void onStop() {
+    public void onUnload() {
         for (String registerCommand : registerCommands) {
             Objects.requireNonNull(Bukkit.getServer().getCommandMap().getCommand(registerCommand)).unregister(Bukkit.getServer().getCommandMap());
         }

@@ -1,11 +1,11 @@
-package tokyo.ramune.origami.service;
+package tokyo.ramune.origami.system.service;
 
 import org.bukkit.Bukkit;
 import org.bukkit.event.HandlerList;
 import org.bukkit.plugin.java.JavaPlugin;
-import tokyo.ramune.origami.system.Command;
-import tokyo.ramune.origami.system.CommandService;
-import tokyo.ramune.origami.system.ListenerService;
+import tokyo.ramune.origami.system.command.Command;
+import tokyo.ramune.origami.system.command.CommandService;
+import tokyo.ramune.origami.system.listener.ListenerService;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
@@ -30,11 +30,9 @@ public class ManagerService extends Service {
     }
 
     public void unloadSystemServices() {
-        listenerService.onStop();
         listenerService.onUnload();
         listenerService = null;
 
-        commandService.onStop();
         commandService.onUnload();
         commandService = null;
     }

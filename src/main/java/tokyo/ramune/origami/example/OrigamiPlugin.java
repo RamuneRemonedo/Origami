@@ -1,7 +1,7 @@
 package tokyo.ramune.origami.example;
 
 import org.bukkit.plugin.java.JavaPlugin;
-import tokyo.ramune.origami.service.ManagerService;
+import tokyo.ramune.origami.system.service.ManagerService;
 
 public final class OrigamiPlugin extends JavaPlugin {
     private ManagerService serviceManager;
@@ -12,7 +12,7 @@ public final class OrigamiPlugin extends JavaPlugin {
         serviceManager = new ManagerService(this);
 
         // This is How to load service and start
-        serviceManager.loadService(new HelloService()).onStart();
+        serviceManager.loadService(new HelloService());
     }
 
     @Override

@@ -1,4 +1,4 @@
-package tokyo.ramune.origami.system;
+package tokyo.ramune.origami.system.command;
 
 import org.bukkit.command.BlockCommandSender;
 import org.bukkit.command.CommandSender;

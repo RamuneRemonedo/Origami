@@ -1,4 +1,4 @@
-package tokyo.ramune.origami.system;
+package tokyo.ramune.origami.system.listener;
 
 import org.bukkit.Bukkit;
 import org.bukkit.event.Event;
@@ -6,21 +6,13 @@ import org.bukkit.event.HandlerList;
 import org.bukkit.plugin.EventExecutor;
 import org.bukkit.plugin.RegisteredListener;
 import org.bukkit.plugin.java.JavaPlugin;
-import tokyo.ramune.origami.service.Service;
-import tokyo.ramune.origami.service.ServiceHandler;
-import tokyo.ramune.origami.service.ServicePriority;
+import tokyo.ramune.origami.system.service.Service;
 
 import javax.annotation.Nonnull;
 
-@ServiceHandler(priority = ServicePriority.SYSTEM)
 public class ListenerService extends Service {
     public ListenerService(JavaPlugin plugin) {
         super(plugin);
-    }
-
-    @Override
-    public void onStart() {
-        super.onStart();
     }
 
     @SafeVarargs
@@ -47,7 +39,7 @@ public class ListenerService extends Service {
 
     public void unregisterEvent(@Nonnull Listener<? extends Event> listener) {
         for (RegisteredListener registeredListener : HandlerList.getRegisteredListeners(getPlugin())) {
-            if (((org.bukkit.event.Listener) registeredListener).equals(listener))
+            if (registeredListener.equals(listener))
                 HandlerList.unregisterAll((org.bukkit.event.Listener) registeredListener);
         }
     }

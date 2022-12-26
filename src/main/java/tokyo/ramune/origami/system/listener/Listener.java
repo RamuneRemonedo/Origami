@@ -1,4 +1,4 @@
-package tokyo.ramune.origami.system;
+package tokyo.ramune.origami.system.listener;
 
 import org.bukkit.event.Event;
 import org.bukkit.event.EventHandler;
